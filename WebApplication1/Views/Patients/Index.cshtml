@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication1.Models.Patients>
+
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<h3>Patients</h3>
+<p><a asp-controller="Patients" asp-action="Create">Create New</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.cardNumber)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Name) </th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Phone)</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.cardNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+            <td>
+                <a asp-controller="Patients" asp-action="Edit" asp-route-id="@item.Id">Edit</a>    |
+                <a asp-controller="Patients" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Patients" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

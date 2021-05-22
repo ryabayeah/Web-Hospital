@@ -1,0 +1,39 @@
+﻿@model WebApplication1.Models.Patients
+
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<h1>Create</h1>
+<h3>Patients</h3>
+<hr />
+<form method="post">
+    <p>
+        <label><b>@Html.DisplayNameFor(model => model.Name)</b></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </p>
+    <p>
+        <label><b>@Html.DisplayNameFor(model => model.Disease)</b></label><br />
+        <input asp-for="Disease" />
+        <span asp-validation-for="Disease"></span>
+    </p>
+    <p>
+        <label><b>@Html.DisplayNameFor(model => model.Phone)</b></label><br />
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </p>
+    <p>
+        <label><b>@Html.DisplayNameFor(model => model.cardNumber)</b></label><br />
+        <input asp-for="cardNumber" />
+        <span asp-validation-for="cardNumber"></span>
+    </p>
+    <p>
+        <button type="submit" class="btn btn-secondary">Create</button>
+    </p>
+    <p>
+        <a asp-controller="Patients" asp-action="Index">Back to list</a>
+    </p>
+</form>
+
+

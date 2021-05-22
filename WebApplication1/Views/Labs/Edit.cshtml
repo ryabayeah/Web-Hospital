@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.Labs
+
+@{
+    ViewData["Title"] = "Labs";
+}
+<h1>Edit</h1>
+<h3>Labs</h3>
+<hr />
+<form method="post">
+    <p>
+        <label><b>@Html.DisplayNameFor(model => model.Name)</b></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </p>
+    <p>
+        <label><b>@Html.DisplayNameFor(model => model.Address)</b></label><br />
+        <input asp-for="Address" />
+        <span asp-validation-for="Address"></span>
+    </p>
+    <p>
+        <button type="submit" class="btn btn-secondary">Save</button>
+    </p>
+    <p>
+        <a asp-controller="Labs" asp-action="Index">Back to list</a>
+    </p>
+</form>
+
+
